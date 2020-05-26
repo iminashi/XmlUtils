@@ -74,5 +74,17 @@ namespace XmlUtils
             reader.MoveToContent();
             return reader.LocalName == rootElement;
         }
+
+        /// <summary>
+        /// Returns the root element name of the XML file.
+        /// </summary>
+        /// <param name="filename">Name of the file to check.</param>
+        /// <returns>The root element name of the</returns>
+        public static string GetRootElementName(string filename)
+        {
+            using XmlReader reader = XmlReader.Create(filename);
+            reader.MoveToContent();
+            return reader.LocalName;
+        }
     }
 }
